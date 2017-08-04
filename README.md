@@ -3,22 +3,10 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
+Links:
 
-* Ruby version
+[Issues](https://github.com/Terit/coursero/issues)
 
-* System dependencies
+[React Rails](https://github.com/reactjs/react-rails)
+[Semantic UI](https://github.com/Semantic-Org/Semantic-UI-React)
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
