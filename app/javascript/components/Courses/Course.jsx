@@ -4,13 +4,10 @@ import PropTypes from 'prop-types'
 import {Header, Item, Container, Segment, Embed} from 'semantic-ui-react'
 
 import LessonList from '../Lessons/List'
-import SiteHeader from '../Layouts/Header'
-import SiteFooter from '../Layouts/Footer'
+import pageComponent from '../pageComponent'
 
 const Course = ({title, description, lessons, instructor: {avatar, name, biography} }) =>
-  <div>
-    <SiteHeader />
-    <Container text style={{ marginTop: '7em' }}>
+  <Container text style={{ marginTop: '7em' }}>
     <Header as="h1">{title}</Header>
 
     <Item.Group>
@@ -52,8 +49,6 @@ const Course = ({title, description, lessons, instructor: {avatar, name, biograp
         source='vimeo'
       />
     </Segment>
-    </Container>
-    <SiteFooter />
-  </div>
+  </Container>
 
-export default Course
+export default pageComponent(Course)
