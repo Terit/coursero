@@ -7,6 +7,8 @@ end
 
 ruby '2.4.1'
 
+gem 'active_model_serializers', '~> 0.10.0'
+gem 'paperclip', '~> 5.0.0'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.1.3'
@@ -31,9 +33,9 @@ end
 
 group :test do
   gem 'capybara', '~> 2.13'
-  gem 'selenium-webdriver'
   gem 'faker', '~> 1.6'
-  gem 'rspec-rails', '~> 3.5.0'
+  gem 'selenium-webdriver'
   gem 'rails-controller-testing', '~> 1.0'
+  gem 'rspec-rails', '~> 3.5.0'
   gem 'rspec-json_expectations'
 end

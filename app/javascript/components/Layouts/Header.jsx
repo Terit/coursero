@@ -7,6 +7,8 @@ import {
   Image,
   Button} from 'semantic-ui-react'
 
+import Link from '../Base/Link'
+
 export default class Header extends Component {
   render () {
     return (
@@ -21,8 +23,8 @@ export default class Header extends Component {
             Coursero
           </Menu.Item>
           <Menu.Item as='a' active>Home</Menu.Item>
-          <Menu.Item as='a'>Courses</Menu.Item>
-          <Menu.Item as='a'>About</Menu.Item>
+          <Menu.Item as='a'><Link link="/courses">Courses</Link></Menu.Item>
+          <Menu.Item as='a'><Link link="/instructors">Instructors</Link></Menu.Item>
           <Menu.Menu position='right'>
             <Menu.Item className='item'>
               <Button as='a' inverted>Log in</Button>
