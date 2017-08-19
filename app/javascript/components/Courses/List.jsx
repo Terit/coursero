@@ -15,4 +15,4 @@ const List = (props) =>
   </Container>
 
 
-export default pageComponent(List)
+export default pageComponent(List, 'courses')

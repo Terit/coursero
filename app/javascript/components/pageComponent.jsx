@@ -3,7 +3,7 @@ import React, {Component} from 'React'
 import SiteHeader from './Layouts/Header'
 import SiteFooter from './Layouts/Footer'
 
-function pageComponent(WrappedComponent) {
+function pageComponent(WrappedComponent, activePage) {
   return class extends Component {
     constructor (props) {
       super(props)
@@ -12,7 +12,7 @@ function pageComponent(WrappedComponent) {
     render () {
       return (
         <div>
-          <SiteHeader />
+          <SiteHeader activePage={activePage} currentUser={this.props.currentUser} />
           <WrappedComponent {...this.props} />
           <SiteFooter />
         </div>

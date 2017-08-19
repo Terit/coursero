@@ -51,4 +51,4 @@ const Course = ({title, description, lessons, instructor: {avatar, name, biograp
     </Segment>
   </Container>
 
-export default pageComponent(Course)
+export default pageComponent(Course, 'courses')

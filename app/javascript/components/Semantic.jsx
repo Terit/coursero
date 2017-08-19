@@ -13,6 +13,11 @@ import {
   Visibility,
 } from 'semantic-ui-react'
 
+import Link from './Base/Link'
+
+import heroImage from '../../assets/images/hero.jpg'
+import blueprints from '../../assets/images/blueprint.jpg'
+
 export default class HomepageLayout extends Component {
   constructor () {
     super()
@@ -43,27 +48,27 @@ export default class HomepageLayout extends Component {
           <Segment
             inverted
             textAlign='center'
-            style={{ minHeight: 700, padding: '1em 0em' }}
+            style={{ minHeight: 700, padding: '1em 0em', backgroundImage: `url(${heroImage})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}
             vertical
           >
 
-            <Container text>
+            <Container text >
               <Header
                 as='h1'
                 content='Coursero'
-                inverted
                 style={{ fontSize: '4em', fontWeight: 'normal', marginBottom: 0, marginTop: '3em' }}
               />
               <Header
                 as='h2'
                 content='Second line of marketing mumbo jumbo'
-                inverted
                 style={{ fontSize: '1.7em', fontWeight: 'normal' }}
               />
-              <Button primary size='huge' onClick={() => window.location = '/courses'}>
-                Get Started
-                <Icon name='right arrow' />
-              </Button>
+              <Link link="/signup">
+                <Button size='huge' color='red'>
+                    Get Started
+                    <Icon name='right arrow' />
+                </Button>
+              </Link>
             </Container>
           </Segment>
         </Visibility>
@@ -86,13 +91,17 @@ export default class HomepageLayout extends Component {
                 <Image
                   bordered
                   size='large'
-                  src='/assets/images/wireframe/white-image.png'
+                  src={blueprints}
                 />
               </Grid.Column>
             </Grid.Row>
             <Grid.Row>
               <Grid.Column textAlign='center'>
-                <Button size='huge'>Check Them Out</Button>
+                <Button size='huge'>
+                  <Link link="/courses">
+                    Check Them Out
+                  </Link>
+                </Button>
               </Grid.Column>
             </Grid.Row>
           </Grid>

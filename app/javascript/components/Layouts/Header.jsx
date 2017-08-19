@@ -9,7 +9,7 @@ import {
 
 import Link from '../Base/Link'
 
-export default class Header extends Component {
+class Header extends Component {
   render () {
     return (
       <Menu fixed='top' size='large' inverted>
@@ -22,17 +22,39 @@ export default class Header extends Component {
             />
             Coursero
           </Menu.Item>
-          <Menu.Item as='a' active>Home</Menu.Item>
-          <Menu.Item as='a'><Link link="/courses">Courses</Link></Menu.Item>
-          <Menu.Item as='a'><Link link="/instructors">Instructors</Link></Menu.Item>
+          <Menu.Item as='a' active={this.props.activePage === 'home'}>
+            <Link link='/'>Home</Link>
+          </Menu.Item>
+          <Menu.Item as='a' active={this.props.activePage === 'courses'}>
+            <Link link="/courses">Courses</Link>
+          </Menu.Item>
+          <Menu.Item as='a' active={this.props.activePage === 'instructors'}>
+            <Link link="/instructors">Instructors</Link>
+          </Menu.Item>
           <Menu.Menu position='right'>
-            <Menu.Item className='item'>
-              <Button as='a' inverted>Log in</Button>
-              <Button as='a' inverted style={{ marginLeft: '0.5em' }}>Sign Up</Button>
-            </Menu.Item>
+            {this.props.currentUser
+              ? (<Menu.Item className="item">
+                  <span>{this.props.currentUser.first_name}</span>
+                  <span style={{ marginLeft: '0.5em' }}><Link link="/logout" >Log out</Link></span>
+                </Menu.Item>)
+              : (<Menu.Item className='item'>
+                  <Button as='a' inverted>
+                    <Link link="/login">Log in</Link>
+                  </Button>
+                  <Button as='a' inverted style={{ marginLeft: '0.5em' }}>
+                    <Link link="/signup">Sign Up</Link>
+                  </Button>
+                </Menu.Item>)}
           </Menu.Menu>
         </Container>
       </Menu>
     )
   }
 }
+
+Header.defaultProps = {
+  activePage: 'home',
+  currentUser: null
+}
+
+export default Header
