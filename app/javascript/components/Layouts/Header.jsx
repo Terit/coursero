@@ -5,47 +5,44 @@ import {
   Container,
   Menu,
   Image,
+  Dropdown,
   Button} from 'semantic-ui-react'
 
-import Link from '../Base/Link'
+import Logo from '../../../assets/images/logo.png'
 
 class Header extends Component {
   render () {
     return (
       <Menu fixed='top' size='large' inverted>
         <Container>
-          <Menu.Item as='a' header>
+          <Menu.Item href="/" as='a' header>
             <Image
               size='mini'
-              src='/logo.png'
+              src={Logo}
               style={{ marginRight: '1.5em' }}
             />
             Coursero
           </Menu.Item>
-          <Menu.Item as='a' active={this.props.activePage === 'home'}>
-            <Link link='/'>Home</Link>
+          <Menu.Item href="/courses" as='a' active={this.props.activePage === 'courses'} color="red">
+            Courses
           </Menu.Item>
-          <Menu.Item as='a' active={this.props.activePage === 'courses'}>
-            <Link link="/courses">Courses</Link>
+          <Menu.Item href="/instructors" as='a' active={this.props.activePage === 'instructors'} color="red">
+            Instructors
           </Menu.Item>
-          <Menu.Item as='a' active={this.props.activePage === 'instructors'}>
-            <Link link="/instructors">Instructors</Link>
-          </Menu.Item>
-          <Menu.Menu position='right'>
-            {this.props.currentUser
-              ? (<Menu.Item className="item">
-                  <span>{this.props.currentUser.first_name}</span>
-                  <span style={{ marginLeft: '0.5em' }}><Link link="/logout" >Log out</Link></span>
-                </Menu.Item>)
-              : (<Menu.Item className='item'>
-                  <Button as='a' inverted>
-                    <Link link="/login">Log in</Link>
-                  </Button>
-                  <Button as='a' inverted style={{ marginLeft: '0.5em' }}>
-                    <Link link="/signup">Sign Up</Link>
-                  </Button>
-                </Menu.Item>)}
-          </Menu.Menu>
+          {this.props.currentUser
+            ? (<Menu.Menu position='right'>
+                <Dropdown item text={this.props.currentUser.first_name}>
+                  <Dropdown.Menu>
+                    <Dropdown.Item>Profile</Dropdown.Item>
+                    <Dropdown.Item href="/logout">Log out</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+              </Menu.Menu>
+            ) : (
+              <Menu.Menu position='right'>
+                <Menu.Item color="red" href="/login">Log in</Menu.Item>
+                <Menu.Item color="red" href="/signup" active>Sign up</Menu.Item>
+              </Menu.Menu>)}
         </Container>
       </Menu>
     )

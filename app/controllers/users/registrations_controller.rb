@@ -1,11 +1,12 @@
 module Users
   class RegistrationsController < Devise::RegistrationsController
+    before_action :configure_permitted_parameters, only: :create
     # before_action :configure_sign_up_params, only: [:create]
     # before_action :configure_account_update_params, only: [:update]
 
     # GET /resource/sign_up
     def new
-      render component: 'Users/Registration', props: { csrf: form_authenticity_token }
+      render component: 'Users/SignUp', props: { csrf: form_authenticity_token }
     end
 
     # POST /resource
@@ -42,7 +43,7 @@ module Users
     # If you have extra params to permit, append them to the sanitizer.
     def configure_permitted_parameters
       devise_parameter_sanitizer.permit(:sign_up) do |user_params|
-        user_params.permit(:first_name, :last_name)
+        user_params.permit(:email, :password, :password_confirmation, :first_name, :last_name)
       end
     end
 

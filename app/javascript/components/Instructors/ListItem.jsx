@@ -3,24 +3,16 @@ import PropTypes from 'prop-types'
 
 import {Card, Image, Button} from 'semantic-ui-react'
 
-const ListItem = ({link, title, description, instructor: {avatar, name} }) =>
+const ListItem = ({avatar, name, link}) =>
   <Card href={link}>
     <Card.Content>
       <Image floated='right' size='mini' src={avatar} />
       <Card.Header>
-        {title}
-      </Card.Header>
-      <Card.Meta>
         {name}
-      </Card.Meta>
+      </Card.Header>
       <Card.Description>
-        {description}
+        Placeholder
       </Card.Description>
-    </Card.Content>
-    <Card.Content extra>
-      <div className="ui one buttons">
-        <Button basic color="green">Enroll</Button>
-      </div>
     </Card.Content>
   </Card>
 

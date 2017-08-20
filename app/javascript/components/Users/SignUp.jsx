@@ -4,7 +4,7 @@ import {Header, Card, Container, Form, Input} from 'semantic-ui-react'
 
 import pageComponent from '../pageComponent'
 
-class Registration extends Component {
+class SignUp extends Component {
   render () {
     return (
       <Container style={{ marginTop: '7em', marginBottom: '5rem' }}>
@@ -20,11 +20,11 @@ class Registration extends Component {
           <Form.Input id="password" name="user[password]" label="Password" type="password" required />
           <Form.Input id="password_confirmation" name="user[password_confirmation]" label="Confirm Password" type="password" required />
           <Form.Checkbox label='I agree to the Terms and Conditions' required />
-          <Form.Button type='submit'>Submit</Form.Button>
+          <Form.Button type='submit'>Sign up</Form.Button>
         </form>
       </Container>
     )
   }
 }
 
-export default pageComponent(Registration, 'sign-up')
+export default pageComponent(SignUp, 'sign-up')

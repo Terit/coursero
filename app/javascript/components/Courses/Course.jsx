@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 import {Header, Item, Container, Segment, Embed} from 'semantic-ui-react'
 
 import LessonList from '../Lessons/List'
-import Link from '../Base/Link'
 import pageComponent from '../pageComponent'
 
 const Course = ({title, description, lessons, instructor: {avatar, name, biography, link} }) =>
@@ -17,7 +16,7 @@ const Course = ({title, description, lessons, instructor: {avatar, name, biograp
         <Item.Image size="tiny" src={avatar} />
 
         <Item.Content>
-          <Item.Header as="a"><Link link={link}>{name}</Link></Item.Header>
+          <Item.Header as="a" href={link}>{name}</Item.Header>
           <Item.Meta>Biography</Item.Meta>
           <Item.Description>{biography}</Item.Description>
         </Item.Content>
