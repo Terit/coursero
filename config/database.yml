@@ -31,7 +31,4 @@ test:
   database: coursero_test
 
 production:
-  <<: *default
-  database: coursero_production
-  username: coursero
-  password: <%= ENV['COURSERO_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
