@@ -31,4 +31,6 @@ test:
   database: coursero_test
 
 production:
+  <<: *default
+  database: coursero_development
   url: <%= ENV['DATABASE_URL'] %>
