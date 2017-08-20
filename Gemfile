@@ -9,6 +9,7 @@ ruby '2.4.1'
 
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'devise'
+gem 'execjs'
 gem 'paperclip', '~> 5.0.0'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'

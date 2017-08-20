@@ -1,4 +1,4 @@
-import React, {Component} from 'React'
+import React, {Component} from 'react'
 
 import SiteHeader from './Layouts/Header'
 import SiteFooter from './Layouts/Footer'
