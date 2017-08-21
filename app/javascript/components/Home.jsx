@@ -13,9 +13,7 @@ import {
   Visibility,
 } from 'semantic-ui-react'
 
-import Link from './Base/Link'
 import pageComponent from './pageComponent'
-
 import heroImage from '../../assets/images/hero.jpg'
 import blueprints from '../../assets/images/blueprint.jpg'
 
