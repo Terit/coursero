@@ -3,7 +3,27 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Links:
+
+## Getting Started
+
+```
+# Install dependencies
+brew update
+brew install postgresql
+brew install imagemagick
+brew install yarn
+
+# Install gems
+bundle install
+yarn install
+
+bundle exec rails db:setup
+
+bundle exec rails s
+```
+
+
+## Links:
 
 [Issues](https://github.com/Terit/coursero/issues)
 
