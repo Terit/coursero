@@ -7,7 +7,7 @@ end
 
 ruby '2.4.1'
 
-gem 'active_model_serializers', '~> 0.10.0'
+gem 'active_model_serializers', '~> 0.10.7'
 gem 'devise'
 gem 'execjs'
 gem 'paperclip', '~> 6.1.0'
