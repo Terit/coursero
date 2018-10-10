@@ -38,6 +38,6 @@ group :test do
   gem 'faker', '~> 1.6'
   gem 'selenium-webdriver'
   gem 'rails-controller-testing', '~> 1.0'
-  gem 'rspec-rails', '~> 3.5.0'
+  gem 'rspec-rails', '~> 3.8.0'
   gem 'rspec-json_expectations'
 end
