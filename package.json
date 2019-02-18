@@ -30,7 +30,7 @@
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react_ujs": "^2.2.1",
-    "resolve-url-loader": "^2.1.0",
+    "resolve-url-loader": "^3.0.1",
     "sass-loader": "^6.0.6",
     "semantic-ui-css": "^2.2.11",
     "semantic-ui-react": "^0.71.3",
